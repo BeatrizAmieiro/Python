@@ -1,0 +1,52 @@
+#1 Elabore um programa que leia três números diferentes e informe o maior deles.
+
+num1 = int(input('Informe o primeiro número: '))
+num2 = int(input('Informe o segundo número: '))
+num3 = int(input('Informe o terceiro número: '))
+
+if num1 > num2 and num1 > num3:
+    print('O número {} é o maior dos três'.format(num1))
+elif num2 > num1 and num2 > num3:
+    print('O número {} é o maior dos três'.format(num2))
+else:
+    print('O número {} é o maior dos três'.format(num3))
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+#2 Faça um programa que leia o código, a quantidade,o preço unitário e a forma de pagamento (1 - Dinheiro, 2 - Cheque, 3 - Cartão débito, 4 - Cartão crédito)de um produto. Pagamentos em dinheiro recebem um desconto de 10%,em cartão 5% e em cheque 2%. O programa deve informar o valor do desconto e o valor final a pagar.
+
+cod = input('Entre com o código de barras: ')
+quant = int(input('Digite a quantidade de produtos: '))
+preco = float(input('Digite o valor unitário do prduto: '))
+formaPagam = int(input('Digite 1 para Dinheiro, 2 para Cheque, 3 para Cartão débito, 4 para Cartão crédito: '))
+valorBruto = quant * preco
+
+if formaPagam == 1:
+    desconto = valorBruto * 0.1
+    valorFinal = valorBruto - desconto
+    print('O valor final é de {}'.format(valorFinal))
+elif formaPagam == 2:
+    desconto = valorBruto * 0.02
+    valorFinal = valorBruto - desconto
+    print('O valor final é de {}'.format(valorFinal))
+elif formaPagam == 3 or formaPagam == 4:
+    desconto = valorBruto * 0.05
+    valorFinal = valorBruto - desconto
+    print('O valor final é de {}'.format(valorFinal))
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+#3 Dado três valores X,Y,Z, verificar se eles podem ser o comprimento dos lados de um triângulo e, se forem, verificar se é um triângulo, equilátero, isósceles ou escaleno. Se eles não formarem um triângulo, escreverem uma mensagem. Obs: O comprimento de cada lado de um triângulo é menor do que a soma dos comprimentos dos outros dois lados; chama-se triângulo equilátero ao triângulo que tem os comprimentos dos três lados iguais; chama-se triângulo isósceles ao triângulo que tem os comprimentos de dois lados iguais. Portanto, todo triângulo equilátero é também isósceles; chama-se triângulo escaleno ao triângulo que tem os comprimentos dos três lados diferentes.
+
+lado1 = input('Digite o tamanho do lado 1: ')
+lado2 = input('Digite o tamanho do lado 2: ')
+lado3 = input('Digite o tamanho do lado 3: ')
+
+if lado1 == lado2 and lado1 == lado3:
+    print('Seu triângulo é Equilátero')
+elif lado1 != lado2 and lado1 != lado3:
+    print('Seu triângulo é Escaleno')
+else:
+    print('Seu triângulo é Isósceles')
+Desafio 6.txt
+Exibindo Desafio 6.txt.
