@@ -166,4 +166,3 @@ while (massa >= 0.5):
     tempo += 1
 massaFim = massa*50
 print('A massa final foi {:.2f} gramas e foram necessários {} segundos para atingir a massa.'.format(massaFim, tempo))
- 
