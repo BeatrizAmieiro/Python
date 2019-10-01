@@ -1,0 +1,50 @@
+#1 Elabore um programa para solicitar o nome, o sexo e o salário bruto de um empregado. Se o seu sexo for masculino, descontar 5% de seu salário; caso contrário, descontar 3%. Informar o valor do desconto e o salário líquido.
+
+nome = input('Digita o seu nome: ')
+sexo = input('Qual o seu sexo? Digite M ou F: ')
+salario = float(input('Qual o seu salário bruto? '))
+if sexo == 'M' or sexo == 'm':
+desconto = salario * 0.05
+salLiq = salario - desconto
+print('{}, você teve um desconto de {} e o seu salário líquido é de {}'.format(nome,desconto,salLiq))
+elif sexo == 'F' or sexo == 'f':
+desconto = salario * 0.03
+salLiq = salario - desconto
+print('{}, você teve um desconto de {} e o seu salário líquido é de {}'.format(nome,desconto,salLiq))
+else:
+print('Favor digitar somente M ou F no campo Sexo')
+
+----------------------------------------------------------------------------------------------------------------------------
+
+#2 Faça um programa que leia dois números e mostre qual o maior dos dois. O programa deve informar caso sejam iguais.
+
+numero1 = int(input('Digite o primeiro número: '))
+numero2 = int(input('Digite o segundo número: '))
+
+if numero1 > numero2:
+print('O número {} é maior que o número {}'.format(numero1,numero2))
+elif numero1 < numero2:
+print('O número {} é maior que o número {}'.format(numero2,numero1))
+else:
+print('Os dois números são iguais')
+
+----------------------------------------------------------------------------------------------------------------------------
+
+#3 Crie um programa para ler o valor do salário mínimo,o nome e o salário bruto de um empregado. Se o seu salário for menor que um salário mínimo descontar 2%; se for igual,descontar 5%, e se for superior, descontar 8%. Informar o valor do desconto e o salário líquido.
+
+salMinimo = 998.00
+nome = input('Digite o seu nome: ')
+salBruto = float(input('Digite o seu salário bruto: '))
+
+if salBruto < salMinimo:
+desconto = salBruto * 0.02
+salLiq = salBruto - desconto
+print('{}, você teve um desconto de {} e o seu salário líquido é de {}'.format(nome,desconto,salLiq))
+elif salBruto == salMinimo:
+desconto = salBruto * 0.05
+salLiq = salBruto - desconto
+print('{}, você teve um desconto de {} e o seu salário líquido é de {}'.format(nome,desconto,salLiq))
+else:
+desconto = salBruto * 0.08
+salLiq = salBruto - desconto
+print('{}, você teve um desconto de {} e o seu salário líquido é de {}'.format(nome,desconto,salLiq))
