@@ -1,0 +1,37 @@
+#1 Faça um programa para solicitar o nome e a idade de uma pessoa.
+Se sua idade for menor que 18 anos, escrever a mensagem: "É menor".
+
+nome = input('Digite seu nome: ')
+idade = int(input('Digite sua idade: '))
+if idade >= 18:
+print('{}, você é maior de idade'.format(nome))
+else:
+print('{}, você é menor de idade'.format(nome))
+
+------------------------------------------------------------------------------------------------------------------------------
+
+#2 Crie um programa para solicitar o ano atual e o ano de nascimento de uma pessoa. Calcular sua idade aproximada e informa-la. Se sua idade for inferior a 16 anos, escrever a mensagem "Não pode votar"; caso contrário, emitir a mensagem "É eleitor".
+
+anoAtual = int(input('Digite o ano atual: '))
+anoNasc = int(input('Digite o ano de nascimento: '))
+idade = anoAtual - anoNasc
+if idade < 16:
+print('Não pode votar')
+elif idade >= 16 and idade < 18:
+print('Seu voto é facultativo')
+else:
+print('Pode votar')
+
+------------------------------------------------------------------------------------------------------------------------------
+
+#3 Faça um programa para solicitar o nome e as duas notas e um aluno.
+Calcular sua média e informa-la. Se ela for inferior a 7, escrever "Reprovado"; caso contrário escrever "Aprovado".
+
+nome = input('Digite seu nome: ')
+av1 = float(input('Nota da AV1: '))
+av2 = float(input('Nota da AV2: '))
+media = (av1 + av2)/2
+if media >= 7:
+print('{}, sua média foi {} e você foi aprovado'.format(nome, media))
+else:
+print('{}, sua média foi {} e você foi reprovado'.format(nome, media))
