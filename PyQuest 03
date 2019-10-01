@@ -1,0 +1,296 @@
+Construa utilizando linguagem Python os seguintes programas:
+
+1 - Escreva um programa que calcule a quantidade de litros de combustível gastos em uma viagem, considerando que o automóvel consome 1 litro a cada 12 Km. Para obter o consumo, o usuário deve fornecer o tempo gasto na viagem e a velocidade média durante a mesma. Desta forma, será possível obter a distância percorrida com a seguinte fórmula DISTANCIA = TEMPO * VELOCIDADE. Tendo o valor da distância, basta calcular a quantidade de litros com a fórmula LITROS_USADOS = DIST NCIA/12. Deve ser fornecido como resposta: a velocidade média, o tempo gasto na viagem, a distância percorrida e a quantidade de litros utilizada na viagem.
+
+tempo = float(input('Digite o tempo de viagem:'))
+veloc = float(input('Digite a velocidade:'))
+dist = tempo * veloc
+lUtil = dist / 12
+
+print('A velocidade média da viagem foi {}Km/h, o tempo gasto foi {}h, o automóvel pecorreu uma distância de {}Km e e, gastou {:.1f} litros de combústivel.'.format(veloc,tempo,dist,lUtil))
+
+----------------------------------------------------------------------------------
+
+2 - Construir um programa que leia a quantidade de alunos do sexo masculino, do sexo feminino e a quantidade de alunos aprovados de uma turma e calcule, armazene e imprima o total de alunos e a porcentagem de alunos do sexo masculino, do sexo feminino e a porcentagem de alunos aprovados.
+
+masc = int(input('Digite a quantidade de alunos do sexo masculino:'))
+fem = int(input('Digite a quantidade de alunos do sexo feminino:'))
+aprov = int(input('Digite a quantidade de alunos aprovados:'))
+tot = masc+fem
+porcMasc = (100*masc)/tot
+porcFem = (100*fem)/tot
+porcAprov = (100*aprov)/tot
+
+print('Em uma turma tem o total de {} alunos, sendo {}% do sexo masculino, {}% do sexo feminino e {}% foram aprovados.'.format(tot,porcMasc, porcFem, porcAprov))
+
+----------------------------------------------------------------------------------
+
+
+3 - Construir um programa que leia as 2 notas de um aluno e que calcule, armazene e imprima a média. Se a média for maior ou igual a 7, imprimir “Aprovado”, caso contrário, realizar a leitura de uma terceira nota, que terá peso 2 e calcular, armazenar e imprimir uma nova média. Se a nova média for maior ou igual a 6, imprimir “Aprovado”, caso contrário, imprimir “Reprovado”.
+
+nome = input('Digite o nome do aluno:')
+not1 = float(input('Digite a primeira nota:'))
+not2 = float(input('Digite a segunda nota:'))
+media = (not1+not2)/2
+
+if media >= 7:
+    print('O aluno {} alcançou a média {:.1f} e foi aprovado.'.format(nome, media))
+else:
+    not3 = float(input('Digite a terceira nota:'))
+    novMedia = (not1+not2+not3)/3
+    if novMedia >= 6:
+        print ('O aluno {} alcançou a média {:.1f} e foi aprovado.'.format(nome, novMedia))
+    else:
+        print ('O aluno {} alcançou a média {:.1f} e foi reprovado.'.format(nome, novMedia))
+        
+----------------------------------------------------------------------------------
+
+4 - Construir um programa leia um número inteiro entre 1 e 7 e imprima o nome do dia da semana correspondente ao número, caso o número esteja fora do intervalo entre 1 e 7, imprimir “Dia Inválido”.
+
+num = int(input('Digite o número da semana:'))
+if num == 1:
+    print('Domingo')
+elif num == 2:
+    print('Segunda-feira')
+elif num == 3:
+    print('Terça-feira')
+elif num == 4:
+    print('Quarta-feira')
+elif num == 5:
+    print('Quinta-feira')
+elif num == 6:
+    print ('Sexta-feira')
+elif num == 7:
+    print('Sábado')
+else:
+    print('Dia Inválido')
+
+----------------------------------------------------------------------------------
+
+5 - Construir um programa que leia o salário bruto e o sexo de um funcionário. Se o sexo for “M” (masculino), calcular, armazenar e imprimir um desconto de 5% e o salário líquido, caso contrário, calcular, armazenar e imprimir um desconto de 3% e o salário líquido.
+
+salbruto = float(input('Digite o salário bruto:'))
+sexo = input('Digite o sexo do funcionário[M ou F]:')
+if sexo == 'M' or sexo == 'm':
+    desc = salbruto*0.05
+    saliq = salbruto - desc
+    print ('O funcionário é do sexo masculino, foi descontado R${:.2f} e o salário líquido é de R${:.2f}.'.format(desc, saliq))
+elif sexo == 'F' or sexo == 'f':
+    desc = salbruto*0.03
+    saliq = salbruto - desc
+    print ('O funcionário é do sexo feminino, foi descontado R${:.2f} e o salário líquido é de R${:.2f}.'.format(desc, saliq))
+else:
+    print('Por favor digitar M ou F')
+
+----------------------------------------------------------------------------------
+
+6 - Certo aço é classificado de acordo com o resultado de três testes, que devem verificar se o mesmo satisfaz às seguintes especificações:
+Teste 1- conteúdo de carbono abaixo de 7%;
+Teste 2- dureza Rockwell maior que 50;
+Teste 3- resistência à tração maior do que 80.000 psi.
+
+Ao aço é atribuído o grau 10, se passa pelos três testes; 9 , se passa apenas nos testes 1 e 2; 8 , se passa no teste 1; e 7, para as outras alternativas. Supondo que sejam lidos de uma unidade de entrada o número de amostra, conteúdo de carbono, a dureza Rokwell e a resistência à tração faça um programa que leia os dados de uma amostra de aço, escrevendo para ela o grau obtido.
+
+teste1 = float(input('Digite o conteúdo de Carbono[%]:'))
+teste2 = float(input('Digite a dureza Rokwell:'))
+teste3 = float(input('Digite a resitência à tração[psi]:'))
+if teste1 <= 7 and teste2 >= 50 and teste3 >= 80000:
+    print('O aço tem grau 10. Aprovado nos três testes.')
+elif teste1 <= 7 and teste2 >= 50 and teste3 < 80000:
+    print('O aço tem grau 9. Aprovado no teste1 e no teste2.')
+elif teste1 <= 7 and teste2 < 50 and teste3 < 80000:
+    print('O aço tem grau 8. Aprovado apenas no teste1.')
+else:
+    print('O aço tem grau 7. Não aprovado nos três testes.')
+
+----------------------------------------------------------------------------------
+
+7 - Escreva um programa que calcule o índice de massa corpórea (IMC) de uma pessoa, sendo o peso e a altura fornecidos pelo teclado. Apresentar na tela o peso, a altura e o IMC calculado.
+Exemplo: Valores fornecidos pelo teclado: Peso = 60kg e Altura = 1,67m Cálculo do IMC = 60 / (1,67)² = 60 / 2,78 = 21,5
+
+peso = float(input('Digite o seu peso:'))
+altura = float(input('Digite a sua altura:'))
+imc = peso / (altura**2)
+print('Seu peso é {:.1f}Kg, sua altura {:.2f}m e seu IMC é {:.1f}.'.format(peso, altura, imc))
+
+----------------------------------------------------------------------------------
+
+8 - Sejam P(x1,y1) e Q(x2,y2) dois pontos quaisquer do plano. A sua distância é dada por: 
+
+D =    (x2 – x1)2 + (y2 – y1)2
+
+Elabore um programa que leia as coordenadas dos pontos “P” e “Q”, calcule e escreva sua distância.
+
+#Obtendo as coordenadas dos pontos "P" e "Q"
+
+x1 = int(input('Digite o valor de x1:'))
+x2 = int(input('Digite o valor de x2:'))
+y1 = int(input('Digite o valor de y1:'))
+y2 = int(input('Digite o valor de y2:'))
+
+'''
+Para calcular o quadrado vc pode usar o operador **
+print (3**2)
+O exemplo acima vai exibir o resultado de 3 elevado a 2, ou seja, 9.
+
+Para calcular a raiz quadrada vc pode elevar a meio (1/2)
+print (9**(1/2))
+O exemplo acima vai exibir o resultado de 9 elevado a meio, ou seja, 3.
+'''
+
+resultado = ((x2 - x1) ** 2) + ((y2 - y1) ** 2) ** (1/2)
+print('{:.2f}'.format(resultado))
+
+
+----------------------------------------------------------------------------------
+
+9 - O cardápio de uma lanchonete é o seguinte: 
+Especificação         Código         Preço
+Cachorro quente      100              5,20
+Hambúrguer            101               5,20
+Cheeseburguer        102               7,30
+Refrigerante            103               5,00
+
+Escrever um algoritmo que leia o código do item pedido, a quantidade e calcule o valor a ser pago por aquele lanche. Considere que a cada execução somente será calculado um item.
+
+cod = int(input('Insira o código do item: '))
+if (cod<100) or (cod>103):
+   print('Código inválido!')
+else:
+   quant = int(input('Insira a quantidade: '))
+   if (cod==100) or (cod==101):
+       valor = 5.2*quant
+   elif(cod==102):
+        valor = 7.3*quant
+   else:
+        valor = 5*quant
+   print('Valor do pedido: R${0:.2f}'. format(valor))
+
+
+
+----------------------------------------------------------------------------------
+
+10 - Tendo como dados de entrada a altura e o sexo de uma pessoa (M - masculino e F - feminino), construa um algoritmo que calcule seu peso ideal, utilizando as seguintes fórmulas: 
+- para homens: (72.7*h)-58
+- para mulheres: (62.1*h)-44.7
+
+altura = float(input('Digite sua altura:'))
+sexo = input('Digite o sexo[M ou F]:')
+if sexo == 'M' or sexo =='m':
+    pesoM = (72.7*altura)-58
+    print('O peso ideal para homens é {:.2f}Kg.'.format(pesoM))
+elif sexo == 'F' or sexo =='f':
+    pesoF = (62.1*altura)-44.7
+    print('O peso ideal para mulheres é {:.2f}Kg.'.format(pesoF))
+else:
+    print('Por favor digite M ou F')
+
+
+----------------------------------------------------------------------------------
+
+11- Um banco concederá um crédito especial aos seus clientes, variável com o saldo médio no último ano. Faça um algoritmo que leia o saldo médio de um cliente e calcule o valor do crédito de acordo com a tabela abaixo. Mostre uma mensagem informando o saldo médio e o valor do crédito.
+Saldo médio       Percentual
+de 0 a 200          nenhum crédito
+de 201 a 400      20% do valor do saldo médio
+de 401 a 600      30% do valor do saldo médio
+acima de 601     40% do valor do saldo médio
+
+saldoMedio = int(input('Digite o saldo médio:'))
+if saldoMedio >= 0 and saldoMedio <= 200:
+    valorCred = saldoMedio
+    print('O saldo médio foi {} e valor de crédito será R${:.2f}.'.format(saldoMedio,valorCred))
+elif saldoMedio >= 201 and saldoMedio <= 400:
+    cred = saldoMedio * 0.20
+    valorCred = saldoMedio + cred
+    print('O saldo médio foi {} e valor de crédito será R${:.2f}.'.format(saldoMedio,valorCred))
+elif saldoMedio >= 401 and saldoMedio <= 600:
+    cred = saldoMedio * 0.30
+    valorCred = saldoMedio + cred
+    print('O saldo médio foi {} e valor de crédito será R${:.2f}.'.format(saldoMedio,valorCred))    
+elif saldoMedio > 601:
+    cred = saldoMedio * 0.40
+    valorCred = saldoMedio + cred
+    print('O saldo médio foi {} e valor de crédito será R${:.2f}.'.format(saldoMedio,valorCred))
+
+
+----------------------------------------------------------------------------------
+
+12 - Fazer um algoritmo para calcular a contribuição ao INSS, IR e a associação de funcionários a partir do salário bruto, que é dado de entrada. As taxas sobre o salário bruto são as seguintes: 
+INSS - 10%
+IR - 25%
+Sindicato - 0.5 %
+O programa deve imprimir as contribuições e o valor do salário líquido.
+
+salBruto = float(input('Digite o salário bruto:'))
+inss = salBruto*0.10
+ir = salBruto*0.25
+sind = salBruto*0.05
+saliq = salBruto - (inss+ir+sind)
+print('Foram descontado R${:.2f} de INSS, R${:.2f} de IR, R${:.2f} da contribuição sindical e o salário líquido ficou R${:.2f}'.format(inss,ir,sind,saliq))
+
+----------------------------------------------------------------------------------
+
+13 - Faça um programa que leia três números diferentes e informe o maior deles. Se os números digitados não forem diferentes o programa deve gerar a mensagem: “Os valores digitados não são diferentes”.
+
+n1 = int(input('Digite o primeiro número:'))
+n2 = int(input('Digite o segundo número:'))
+n3 = int(input('Digite o terceiro número:'))
+if n1 > n2 and n1 > n3:
+    print('O número {} é o maior dos três.'.format(n1))
+elif n2 > n1 and n2 > n3:
+    print('O número {} é o maior dos três.'.format(n2))
+elif n3 > n1 and n3 > n2:
+    print('O número {} é o maior dos três'.format(n3))
+else:
+    print('Os três número não são diferentes um do outro.')
+
+----------------------------------------------------------------------------------
+
+
+14 - Elabore um programa que leia o salário de um empregado e com base na tabela abaixo calcule e informe sua gratificação e seu salário líquido.
+
+FAIXA SALARIAL                                        GRATIFICAÇÃO
+Menor que 2000                                                          5%
+De 2000 a 2500                                                          10%
+Maior que 2500 e menor ou igual a 3000                  15%
+Maior que 3000                                                          20%
+
+salbruto = float(input('Digite o salário bruto do funcionário:'))
+if salbruto < 2000:
+    grat = salbruto*0.05
+    saliq = salbruto+grat
+    print('O funcionário recebe R${:.2f} de gratificação e seu salário líquido é de R${:.2f}'.format(grat,saliq))
+elif salbruto >= 2000 and salbruto <= 2500:
+    grat = salbruto*0.10
+    saliq = salbruto+grat
+    print('O funcionário recebe R${:.2f} de gratificação e seu salário líquido é de R${:.2f}'.format(grat,saliq))
+elif salbruto >2500 and salbruto <= 3000:
+    grat = salbruto*0.15
+    saliq = salbruto+grat
+    print('O funcionário recebe R${:.2f} de gratificação e seu salário líquido é de R${:.2f}'.format(grat,saliq))
+elif salbruto > 3000:
+
+    grat = salbruto*0.20
+    saliq = salbruto+grat
+    print('O funcionário recebe R${:.2f} de gratificação e seu salário líquido é de R${:.2f}'.format(grat,saliq))
+
+----------------------------------------------------------------------------------
+
+15 - Jogo de Pedra, papel e tesoura: nesse jogo cada jogador faz sua escolha (1 –Tesoura, 2 – Pedra, 3 – Papel), e vence aquele que escolher um objeto que seja capaz de vencer o outro:
+Tesoura corta papel
+Pedra quebra tesoura
+Papel embrulha a pedra
+
+Faça que leia a opção de objeto do primeiro jogador, a opção de objeto do segundo jogador e informe qual jogador venceu (ou se houve empate).
+
+
+print('opções: 1 Tesoura, 2 Pedra, 3 Papel')
+j1 = input('Jogador1, digite o objeto:')
+j2 = input('Jogador2, digite o objeto:')
+
+if j1 == j2:
+    print('Empate!')
+elif j1 == '1' and j2 == '3' or j1 == '2' and j2 == '1' or j1 == '3' and j2 == '2': 
+    print('O jogador1 escolheu {}, o jogador2 escolheu {} e o jogador1 venceu!'.format(j1,j2))
+elif j2 == '1' and j1 == '3' or j2== '2' and j1 == '1' or j2 == '3' and j1 == '2':
+    print('O jogador1 escolheu {}, o jogador2 escolheu {} e o jogador2 venceu!'.format(j1,j2))
