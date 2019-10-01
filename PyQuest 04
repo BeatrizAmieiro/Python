@@ -14,7 +14,7 @@ print('O valor total é de: R$', total)
 num = 1
 
 for c in range (51):
-num += c
+	num += c
 print('O somatório é:',num)
 
 ------------------------------------------------------------------------------------------------
