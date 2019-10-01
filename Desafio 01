@@ -1,0 +1,43 @@
+#1.Faça um programa para solicitar um número, calcular e informar o seu dobro.
+
+valor1 = int(input('Digite um número:'))
+dobro = (valor1*2)
+print('O dobro é ', dobro)
+-----------------------------------------------------
+#2. Elabore um programa para ler um número, calcular e escrever o quadrado deste número
+
+valor1 = int(input('Digite um número:'))
+quadrado= (valor1*valor1)
+print('O quadrado desse valor é', quadrado)
+----------------------------------------------------
+#3. Crie um programa para ler dois números e informar a média aritmética e a metade da diferença entre eles
+
+valor1 = float(input('Digite o primeiro valor:'))
+valor2 = float(input('Digite o segundo valor:'))
+media=(valor1+valor2)/2
+dif=(valor1-valor2)
+print('A média desses valor é', media)
+print('A diferença desse valor é ', dif)
+-----------------------------------------------------
+#4. Faça um programa para solicitar o nome e o salário de um empregado. Calcular e descontar 8% do seu salário. Informar o valor do desconto e o salário líquido a receber.
+
+nome = input('Digite o seu nome:')
+salario = float(input('Digite o salario:'))
+desc = float(salario*8)/100
+saliq=(salario-desc)
+print('O salário de {} é R${}'.format(nome,saliq))
+-----------------------------------------------------
+#5. Crie um programa para ler a matrícula, o nome e o salário de dois empregados. Descontar 5% no salário do primeiro e acrescentar 9% no salário do segundo. Informar: o valor do desconto do primeiro; o valor do acréscimo do segundo; o salário final do primeiro; o salário final do segundo.
+
+mat1 = input('Digite a matrícula do empregado 1:')
+mat2 = input('Digite a matrícua do empregado 2:')
+nome1 = input('Digite o nome do empregado 1:')
+nome2 = input('Digite o nome do empregado 2:')
+sal1 = float(input('Digite o salário do empregado 1:'))
+sal2 = float(input('Digite o salário do empregado2:'))
+desc = float(sal1*5)/100
+acresc = float(sal2*9)/100
+saliq1=(sal1-desc)
+saliq2=(sal2+acresc)
+print('O salário do empregado {} registrado na matrícula {} é R${}'.format(nome1,mat1,saliq1))
+print('O salário do empregado {} registrado na matrícula {} é R${}'.format(nome2,mat2,saliq2))
