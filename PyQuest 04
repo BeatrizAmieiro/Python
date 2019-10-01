@@ -1,0 +1,169 @@
+1. Faça um programa que leia o preço de 10 produtos. Ao final escreva o somatório dos preços.
+
+total = 0.0
+
+for c in range (1, 11):
+   preco = float(input('Digite o preço do produto {}: '.format(c)))
+   total += preco
+
+print('O valor total é de: R$', total)
+
+------------------------------------------------------------------------------------------------
+
+2. Faça um programa que calcule e escreva no vídeo o somatório dos números inteiros de 1 até 50.
+num = 1
+
+for c in range (51):
+num += c
+print('O somatório é:',num)
+
+------------------------------------------------------------------------------------------------
+
+3. Faça um programa que leia a idade de 10 pessoas. Ao final escreva a média das idades.
+soma = 0
+
+for c in range(1, 11):
+    idade = int(input('Idade da {} pessoa: '.format(c)))
+    soma += idade
+
+media = soma/10
+
+print('A média de idade é de:{}'.format( media))
+
+------------------------------------------------------------------------------------------------
+
+4. Elabore um programa que leia o sexo de um número indeterminado de pessoas. Ao final escreva a quantidade de pessoas cadastradas e o total de pessoas de cada sexo.
+
+resp = 1
+masc = fem = 0
+
+while (resp != 0):
+    sexo = input("Digite o sexo (M ou F): ")
+    if sexo == 'M' or sexo == 'm':
+        masc += 1
+    elif sexo == 'F' or sexo == 'f':
+        fem += 1
+    else:
+        print('Digitar somente M ou F')
+        break
+
+resp = int(input('Digite 0 para sair: '))
+
+total = masc + fem
+
+------------------------------------------------------------------------------------------------
+
+5. Crie um programa que leia a altura de um número indeterminado de pessoas. Ao final o programa deve informar o total de pessoas cadastradas, a quantidade de pessoas com altura inferior a 1,60 metros; a quantidade de pessoas com altura entre 1,60 metros e 1,80 metros e a quantidade de pessoas com altura superior a 1,80 metros.
+
+altura = float(input('Informe a sua altura: '))
+baixo = mediano = alto = 0
+
+while(altura != 0):
+    altura = float(input('Informe a sua altura: '))
+    if altura < 1.60:
+        baixo += 1
+    elif altura >= 1.60 and altura <= 1.80:
+        mediano += 1
+    elif altura > 1.80:
+        alto += 1
+    else:
+        print('Resposta inválida')
+
+total = baixo + mediano + alto
+print('O total de pessoas cadastradas é de {}. Sendo {} menores de 1.60, {} entre 1.60 e 1.80 e {} maiores que 1.80'.format(total, baixo, mediano, alto))
+
+------------------------------------------------------------------------------------------------
+
+6. Elabore um programa que leia a idade de diversas pessoas e ao final informe: o total de pessoas cadastradas, a porcentagem de pessoas com idade inferior a 18 anos, a porcentagem de pessoas com idade igual ou superior a 18 anos. 
+
+idade = int(input('Digite a sua idade: '))
+menor = maior = 0
+
+while(idade != 0):
+    idade = int(input('Digite a sua idade: '))
+    if idade < 18:
+        menor += 1
+    elif idade >= 18:
+        maior += 1
+    else:
+        print('Idade inválida')
+
+total = menor + maior
+porcMenor = (menor/total)*100
+porcMaior = (maior/total)*100
+
+print('Total de pessoas cadastradas:', total)
+print('Porcentagem de menores de idade: {}%'.format(porcMenor))
+print('Porcentagem de maiores de idade: {}%'.format(porcMaior))
+
+------------------------------------------------------------------------------------------------
+
+7. Faça um programa que leia vários números inteiros e ao final escreva o maior.
+	
+resp = cont = 1
+maior = 0
+
+while(resp != 0):
+  num = int(input('Digite o {} número  inteiro: '.format(cont)))
+    if num > maior:
+        maior = num
+    cont += 1
+    resp = int(input('Digite 1 para continuar ou 0 para interromper o programa'))
+
+print('O maior número é:{}'.format(maior))
+
+------------------------------------------------------------------------------------------------
+
+8. Crie um programa que leia o nome e a altura de 10 pessoas e ao final escreva: a altura média do grupo, o nome e a altura da pessoa mais alta.
+
+maiorAltura = total = 0
+nomeAlto = ''
+
+for c in range(10):
+    nome = input('Digite o seu nome: ')
+    altura = float(input('Digite sua altura: '))
+    if altura > maiorAltura:
+        maiorAltura = altura
+        nomeAlto = nome
+    total += altura
+
+media = total / 10
+print('A média de altura é {} e a pessoa mais alta é {} com {}m de altura'.format(media, nomeAlto, maiorAltura))
+
+------------------------------------------------------------------------------------------------
+
+9. A conversão de graus Farenheit para graus centígrados é obtida por : C = 5/9 * (F -32). Faça um programa que calcule e escreva uma tabela de centígrados em função de graus Farenheit, que variam de 100 a 150 de 1 em 1.
+
+for far in range(100, 151):
+    celsius = (5/9)*(far-32)
+print('{:.1f}°F - {:.1f}°C'.format(far,celsius))
+
+------------------------------------------------------------------------------------------------
+
+10. Elabore um programa que leia diversos números e ao final escreva: a quantidade de números digitados, a quantidade de números pares, a quantidade de números ímpares.
+par = impar = total = 0
+resp = 1
+ 
+while (resp != 0):
+    num = int(input('Digite um número:'))
+    if num % 2 == 0:
+        par += 1
+    else:
+        impar += 1
+    total = par + impar
+    resp = int(input('Digite 0 para parar o programa ou 1 para continuar'))
+ 
+print('O total de de números digitados foi {}, sendo {} pares e {} impares.'.format(total, par, impar))
+
+------------------------------------------------------------------------------------------------
+
+11. Um determinado material radioativo perde metade de sua massa a cada 50 segundos. Dada a massa inicial, em gramas, fazer um algoritmo que determine o tempo necessário para que essa massa se torne menor do que 0.5 gramas. Escreva a massa final, e o tempo. Observação: o usuário deve digitar a massa inicial.
+ 
+tempo = 0
+massa = float(input('Digite a massa inicial do material:'))
+while (massa >= 0.5):
+    massa /= 2
+    tempo += 1
+massaFim = massa*50
+print('A massa final foi {:.2f} gramas e foram necessários {} segundos para atingir a massa.'.format(massaFim, tempo))
+ 
