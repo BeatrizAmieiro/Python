@@ -1,0 +1,60 @@
+#1.Faça um programa que dado o valor da temperatura em graus FARENHEIT,calcular e escrever o valor da temperatura em graus CELSIUS.
+
+Fórmula: C = 5/9 * (F - 32)
+F = float(input('Digite a temperatura em Farenheit:'))
+C = 5/9*(F-32)
+print('A temperatura de farenheit {0}°F para celsios é {1:.2f}°C '.format(F,C))
+---------------------------------------------------------------------------------
+#2.Faça um programa para solicitar o código, a quantidade de alunos do sexo masculino, a quantidade de alunos do sexo feminino e a quantidade de alunos aprovados de uma determinada turma.
+Calcular e informar: a porcentagem de alunos do sexo masculino; a porcentagem de alunos do sexo feminino; a porcentagem de alunos reprovados; o total de alunos da turma.
+
+quantmasc = int(input('Digite a quantidade de alunos do sexo masculino:'))
+quantfem = int(input('Digite a quantidade de alunos do sexo feminino:'))
+totalaprov = int(input('Digite o total de alunos aprovados:'))
+total = (quantmasc+quantfem)
+porcmasc=(total*quantmasc)/100
+porcfem=(total*quantfem)/100
+porcreprov = (total-totalaprov)
+print('Nessa turma tem um total de {} alunos, sendo {}% de alunos do sexo masculinos, {}% são do sexo feminino, dentre eles teve {}% de alunos foram reprovados.'.format(total,porcmasc,porcfem,porcreprov))
+-------------------------------------------------------------------------------
+#3.O camelô Zé da banca vende diariamente, games, calculadoras e canetas. Faça um programa para solicitar o total de games, o total de calculadoras e o total de canetas vendidas ao término do dia. O programa deve solicitar também o preço de cada um dos produtos e ao final calcular e informar o total do faturamento com cada produto e o faturamento total.
+
+totgames = int(input('Digite o total de games vendidos:'))
+totcalc = int(input('Digite o total de calculadoras vendidas:'))
+totcaneta = int(input('Digite o total de canetas vendidas:'))
+valorgames = float(input('Entre com o valor do game:'))
+valorcalc = float(input('Entre com o valor da calculadora:'))
+valorcaneta = float(input('Entre com o valor da caneta:'))
+fatgames=(totgames*valorgames)
+fatcalc=(totcalc*valorcalc)
+fatcaneta=(totcaneta*valorcaneta)
+total=(fatgames+fatcalc+fatcaneta)
+print('O faturamento total foi R${}, foram vendidos R${} em games, R${} em calculadoras e R${} em canetas'.format(total,fatgames,fatcalc,fatcaneta))
+----------------------------------------------------------------------------------
+#4. Elabore um programa para solicitar o nome de uma equipe de futebol, a quantidade de derrotas, empates e vitórias obtidas por ela no campeonato. Calcular e informar: a quantidade de pontos ganhos e a quantidade de pontos perdidos.
+
+“““partidas vencidas valem 3 pontos
+partidas empatadas valem 1 ponto para cada equipe
+partidas perdidas deixam de ganhar”””
+nome = input('Digite o nome da equipe:')
+quantder = int(input('Digite a quantidade de derrotas:'))
+quantemp = int(input('Digite a quantidade de empates:'))
+quantvit = int(input('Digite a quantidade de vitórias:'))
+tot=(quantder+quantemp+quantvit)
+pontganho=(quantemp+quantvit)
+pontperdido=(tot-pontganho)
+print('A equipe {} participou de {} partidas, tendo ganhado {} pontos e
+deixou de ganhar {} pontos nesse campeonato.'.format(nome,tot,pontganho,pontperdido))
+
+---------------------------------------------------------------------------------
+#5. Elabore um programa que calcule a média de quilômetros por litro de um determinado veículo. Dados: quilometragem inicial, quilometragem final, quantidade de litros gastos.
+Fórmulas:
+
+quilômetros rodados = quilometragem final - quilometragem inicial;
+média = quilômetros rodados/litros gastos.
+quilini = float(input('Digite a quilometragem inicial:'))
+quilfinal = float(input('Digite a quilometragem final:'))
+litrogast = float(input('Digite a quantos litros de combustível foram gasto:'))
+quilrod=(quilfinal-quilini)
+media=(quilrod/litrogast)
+print('O veículo gasta em média {} litros por {}km rodados'.format(media,quilrod))
