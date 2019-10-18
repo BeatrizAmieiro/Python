@@ -41,11 +41,9 @@ quantder = int(input('Digite a quantidade de derrotas:'))
 quantemp = int(input('Digite a quantidade de empates:'))
 quantvit = int(input('Digite a quantidade de vitórias:'))
 tot=(quantder+quantemp+quantvit)
-pontganho=(quantemp+quantvit)
-pontperdido=(tot-pontganho)
-print('A equipe {} participou de {} partidas, tendo ganhado {} pontos e
-deixou de ganhar {} pontos nesse campeonato.'.format(nome,tot,pontganho,pontperdido))
-
+pontganho=quantemp+(quantvit*3)
+pontperdido=(quantder*3)+(quantemp*2)
+print('A equipe {} participou de {} partidas, tendo ganhado {} pontos e deixou de ganhar {} pontos nesse campeonato.'.format(nome,tot,pontganho,pontperdido))
 ---------------------------------------------------------------------------------
 #5. Elabore um programa que calcule a média de quilômetros por litro de um determinado veículo. Dados: quilometragem inicial, quilometragem final, quantidade de litros gastos.
 Fórmulas:
