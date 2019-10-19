@@ -16,7 +16,7 @@ porcmasc=(quantmasc*100)/total
 porcfem=(quantfem*100)/total
 totalreprov=(total-totalaprov)
 porcreprov = (totalreprov*100)/total
-print('Nessa turma tem um total de {} alunos, sendo {}% de alunos do sexo masculinos, {}% são do sexo feminino, dentre eles teve {}% de alunos foram reprovados.'.format(total,porcmasc,porcfem,porcreprov))
+print('Nessa turma tem um total de {} alunos, sendo {:.1f}% de alunos do sexo masculinos, {:.1f}% são do sexo feminino, dentre eles teve {:.1f}% de alunos foram reprovados.'.format(total,porcmasc,porcfem,porcreprov))
 -------------------------------------------------------------------------------
 #3.O camelô Zé da banca vende diariamente, games, calculadoras e canetas. Faça um programa para solicitar o total de games, o total de calculadoras e o total de canetas vendidas ao término do dia. O programa deve solicitar também o preço de cada um dos produtos e ao final calcular e informar o total do faturamento com cada produto e o faturamento total.
 
