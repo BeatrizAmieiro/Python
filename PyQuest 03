@@ -17,11 +17,11 @@ masc = int(input('Digite a quantidade de alunos do sexo masculino:'))
 fem = int(input('Digite a quantidade de alunos do sexo feminino:'))
 aprov = int(input('Digite a quantidade de alunos aprovados:'))
 tot = masc+fem
-porcMasc = (100*masc)/tot
-porcFem = (100*fem)/tot
-porcAprov = (100*aprov)/tot
+porcMasc = (masc*100)/tot
+porcFem = (fem*100)/tot
+porcAprov = (aprov*100)/tot
 
-print('Em uma turma tem o total de {} alunos, sendo {}% do sexo masculino, {}% do sexo feminino e {}% foram aprovados.'.format(tot,porcMasc, porcFem, porcAprov))
+print('Em uma turma tem o total de {} alunos, sendo {:.1f}% do sexo masculino, {:.1f}% do sexo feminino e {:.1f}% foram aprovados.'.format(tot,porcMasc, porcFem, porcAprov))
 
 ----------------------------------------------------------------------------------
 
