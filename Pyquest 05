@@ -1,0 +1,162 @@
+#  1. Faça um programa utilizando vetores que leia o nome e a altura de 50 pessoas e ao final escreva o nome e a altura das pessoas com mais de 1,70 metros.
+
+lnome = []
+laltura = []
+base = 50
+
+for i in range(base):
+    lnome.append(input('Digite o nome:'))
+    laltura.append(float(input('Digite a altura:')))
+
+for i in range(base):
+    if laltura[i] > 1.7:
+        print(f'As pessoas com mais de 1.70 metros foram {lnome[i]} com {laltura[i]}.')
+
+#  2. Elabore um programa que leia a matrícula e o salário bruto de 100 empregados. Os dados devem ser armazenados em vetores. O programa deve descontar 11% do salário bruto de cada empregado e ao final escrever: a matrícula, o salário bruto, o desconto e o salário líquido de cada empregado.
+
+lmat = []
+lsalb = []
+ldesc = []
+lsaliq = []
+base = 100
+
+for i in range(base):
+    lmat.append(input('Digite o número de matrícula:'))
+    lsalb.append(float(input('Digite o salário bruto:')))
+    ldesc.append(lsalb[i]*0.11)
+    lsaliq.append(lsalb[i]-ldesc[i])
+
+for i in range(base):
+    print(f'Matrícula: {lmat[i]:10} Salário bruto: {lsalb[i]:10.2f} Desconto: {ldesc[i]:10.2f} Salário líquido: {lsaliq[i]:10.2f}')
+
+# 3. Faça um programa usando vetores que armazene o código, o nome e o telefone de 100 pessoas. O programa deve permitir que o usuário faça uma consulta dos dados de uma pessoa a partir de seu código. Esta consulta pode ser repetida se o usuário desejar, caso contrário, o programa deve ser encerrado.
+
+# 3. Faça um programa usando vetores que armazene o código, o nome e o telefone de 100 pessoas. O programa deve permitir que o usuário faça uma consulta dos dados de uma pessoa a partir de seu código. Esta consulta pode ser repetida se o usuário desejar, caso contrário, o programa deve ser encerrado.
+
+lcod = []
+lnome = []
+ltel = []
+base = 100
+
+for i in range(base):
+   lcod.append(input('Digite o código de identificação:'))
+   lnome.append(input('Digite o nome:'))
+   ltel.append(input('Digite o telefone:'))
+
+pesq = input('Deseja pesquisar[S/N]:')
+
+while pesq == 'S':
+    cons = input('Entre com o código para pesquisar:')
+
+    if cons in lcod:
+        pos=lcod.index(cons)
+        print(f'Código: {lcod[pos]:10} Nome: {lnome[pos]:10} Telefone: {ltel[pos]:10}')
+    else:
+        print('Esse código não consta na lista de dados.')
+
+    pesq = input('Deseja pesquisar[S/N]:')
+
+# 4. Construa um programa usando vetores que leia o nome e a nota de 10 alunos e ao final escreva: a nota média da turma; o nome e a nota dos alunos com resultados superiores a nota média da turma.
+
+lnome = []
+lnota = []
+snota = media = 0
+base = 10
+
+for i in range(base):
+    lnome.append(input('Digite o nome do aluno:'))
+    lnota.append(float(input('Digite a nota do aluno:')))
+    snota += lnota[i]
+
+media = snota/base
+
+for i in range(base):
+    if lnota[i] > media:
+        notasup = lnota[i]
+
+        print(f'Média da turma: {media:10.1f}')
+        print(f'Alunos com nota acima da média: {lnome[i]} com nota: {lnota[i]:.1f}.')
+    else:
+        print('Todo mundo ficou abaixo da média da turma.')
+
+# 5. Faça um programa utilizando vetores que leia 10 números inteiros e ao final escreva estes números na ordem crescente e na ordem decrescente.
+
+lnum = []
+base = 10
+
+for i in range(base):
+    lnum.append(int(input('Digite o número:')))
+
+print(f'Os números na ordem crescente: {lnum.sort()}')
+print(f'Os números na ordem decrescente: {lnum.reverse()}')
+
+# 6. Elabore um programa utilizando vetores para armazenar 10 números e ao final escreva a quantidade de números negativos, positivos e nulos.
+
+lnum = []
+neg = nulo = pos = 0
+base = 10
+
+for i in range(base):
+    lnum.append(int(input('Digite o número:')))
+
+    if lnum[i] < 0:
+        neg += 1
+
+    elif lnum[i] == 0:
+        nulo += 1
+
+    else:
+        pos += 1
+
+print(f'A quantidade de números negativos: {neg}')
+print(f'A quantidade de núemros nulo: {nulo}')
+print(f'A quantidade de números positivos: {pos}')
+
+# 7. Construa um programa que armazene números inteiros em um vetor de 10 posições, calcule o quadrado de cada elemento armazenado neste vetor e armazene o resultado em um outro vetor. Ao final os dados do segundo vetor devem ser exibidos no vídeo.
+
+lnum = []
+quad = []
+base = 10
+
+for i in range(base):
+    lnum.append(int(input('Digite o número:')))
+    quad.append(lnum[i]**2)
+
+print(f'A lista digitada foi: {lnum}')
+print(f'O quadrado de cada número da lista é: {quad}')
+
+# 8. Faça um programa utilizando vetor que leia 9 números inteiros. Ao final o programa deve informar o maior número, a quantidade de vezes que ele ocorre e em quais posições do vetor.
+
+lnum = []
+lpos = []
+maior = cont = 0
+base = 9
+
+for i in range(base):
+    lnum.append(int(input('Digite o número:')))
+
+    if lnum[i] > maior:
+        maior = lnum[i]
+
+for i in range(base):
+    if lnum[i] == maior:
+        lpos.append(i)
+        cont += 1
+
+print(f'O maior número é {maior}, a quantidade que ele ocorreu foram {cont} na posição {lpos}.')
+
+# 9. Elabore um programa que contenha três vetores de 10 posições A,B e C. O objetivo do programa é armazenar números nos vetores A e B e fazer com que o vetor C receba a soma dos elementos correspondentes de A e B. Ao final o programa deve exibir no vídeo o conteúdo de C.
+
+A = []
+B = []
+C= []
+base = 10
+
+for i in range(base):
+    A.append(int(input('Digite o número para lista A:')))
+    B.append(int(input('Digite o número para lista B:')))
+    C.append(A[i]+B[i])
+
+print(f'A lista de A foi {A}')
+print(f'A lista de B foi: {B}')
+print(f'A soma de A e B forma a lista de C: {C}')
