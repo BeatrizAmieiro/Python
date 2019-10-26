@@ -31,8 +31,6 @@ for i in range(base):
 
 # 3. Faça um programa usando vetores que armazene o código, o nome e o telefone de 100 pessoas. O programa deve permitir que o usuário faça uma consulta dos dados de uma pessoa a partir de seu código. Esta consulta pode ser repetida se o usuário desejar, caso contrário, o programa deve ser encerrado.
 
-# 3. Faça um programa usando vetores que armazene o código, o nome e o telefone de 100 pessoas. O programa deve permitir que o usuário faça uma consulta dos dados de uma pessoa a partir de seu código. Esta consulta pode ser repetida se o usuário desejar, caso contrário, o programa deve ser encerrado.
-
 lcod = []
 lnome = []
 ltel = []
